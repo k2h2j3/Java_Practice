@@ -4,6 +4,8 @@ public class AcademySolve {
 
     public static void main(String[] args) {
 
+        //SW Academy 2058
+
        /* int inputnum;
         int sum = 0;
         System.out.println("1~9999 사이의 숫자를 입력");
@@ -22,8 +24,8 @@ public class AcademySolve {
 
         //SW Academy 2071
 
-        Scanner sc = new Scanner(System.in);
-        int n=sc.nextInt(); //입력갯수
+        /*Scanner sc = new Scanner(System.in);
+        int n= sc.nextInt(); //입력갯수
 
         for(int i = 1; i <= n; i++)
         {
@@ -40,7 +42,29 @@ public class AcademySolve {
                     }
                 }
             }  System.out.printf("#%d %.0f\n", i, avg);
-        }
+        }*/
+
+        //SW Academy 2070
+
+        /*Scanner sc = new Scanner(System.in);
+        int T;
+        T=sc.nextInt();
+
+        for(int i = 1; i < T+1; i++){
+
+            int num1 = sc.nextInt();
+            int num2 = sc.nextInt();
+
+            if(num1 > num2){
+                System.out.printf("#%d >\n",i);
+            }
+            else if(num1 == num2){
+                System.out.printf("#%d =\n",i);
+            }
+            else{
+                System.out.printf("#%d <\n",i);
+            }
+        }*/
 
 
 
