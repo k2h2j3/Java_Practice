@@ -1,3 +1,3 @@
 # Java_Practice
 
-자바 연습문제
+자바 코딩테스트 대비(SW Academy)
