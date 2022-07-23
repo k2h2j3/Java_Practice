@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class AcademySolve {
@@ -65,6 +67,67 @@ public class AcademySolve {
                 System.out.printf("#%d <\n",i);
             }
         }*/
+
+        // SW Academy 2068
+
+        /*Scanner sc = new Scanner(System.in);
+        int T;
+        T=sc.nextInt();
+
+        for(int i = 1; i < T+1; i++) {
+
+            ArrayList<Integer> mylist = new ArrayList<>(10);
+            for(int j = 0; j< 10; j++){
+                mylist.add(sc.nextInt());
+                mylist.sort(Comparator.reverseOrder());
+
+            }
+            System.out.printf("#%d %d", i,mylist.get(0));
+
+        }*/
+
+        //SW Academy 2072
+
+        /*Scanner sc = new Scanner(System.in);
+        int T;
+        T=sc.nextInt();
+
+        for(int i = 1; i < T+1; i++) {
+            //홀수 덧셈합
+            int sum = 0;
+
+            ArrayList<Integer> mylist = new ArrayList<>(10);
+            for(int j = 0; j< 10; j++){
+                mylist.add(sc.nextInt());
+                if (mylist.get(j) % 2 == 1) {
+                    sum = sum + mylist.get(j);
+                }
+
+
+            }
+            System.out.printf("#%d %d\n", i,sum);
+
+        }*/
+
+        // SW Academy 2063
+
+        /*Scanner sc = new Scanner(System.in);
+        int T;
+        T=sc.nextInt();
+
+        ArrayList<Integer> mylist = new ArrayList<>(T);
+        for(int i = 0; i< T; i++){
+            mylist.add(sc.nextInt());
+            mylist.sort(Comparator.reverseOrder());
+
+        }
+        System.out.printf("%d\n", mylist.get(T / 2));
+
+    }*/
+
+
+
+
 
 
 
