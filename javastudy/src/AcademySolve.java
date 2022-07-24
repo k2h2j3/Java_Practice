@@ -6,6 +6,8 @@ public class AcademySolve {
 
     public static void main(String[] args) {
 
+        //D1 난이도
+
         //SW Academy 2058
 
        /* int inputnum;
@@ -177,6 +179,180 @@ public class AcademySolve {
 
 
         }*/
+
+        // SW Academy 2050
+
+        /*Scanner sc = new Scanner(System.in);
+
+
+        String input = sc.next();
+        for(int i = 0; i< input.length(); i++){
+            System.out.print(((int)input.charAt(i)-64)+" ");
+        }
+        sc.close();*/
+
+        //SW Academy 2043
+
+        /*int P,K;
+        int result;
+
+        P = sc.nextInt();
+        K = sc.nextInt();
+
+        if(P > K) {
+
+
+            if (P < 0 || P > 999) {
+                System.out.printf("0~999사이의 숫자만 입력가능합니다");
+
+            }
+            if (K < 0 || K > 999) {
+                System.out.printf("0~999사이의 숫자만 입력가능합니다");
+
+            } else {
+                result = P - K + 1;
+                System.out.print(result);
+
+            }
+
+        }*/
+
+        // SW Academy 2029
+
+        /*Scanner sc = new Scanner(System.in);
+        int T;
+        T=sc.nextInt();
+        //입력값
+        int a,b;
+        //몫
+        int quot;
+        //나머지
+        int remain;
+
+
+        for(int i = 1; i<T+1;i++){
+            a = sc.nextInt();
+            b = sc.nextInt();
+
+            quot = a / b;
+            remain = a % b;
+
+            System.out.printf("\n#%d %d %d\n",i,quot,remain);
+        }*/
+
+        //SW Academy 2027
+
+        /*for(int i = 0; i < 5; i++){
+            for(int j = 0; j < 5; j++){
+                if(i == j){
+                    System.out.print("#");
+                }
+                else{
+                    System.out.print("+");
+                }
+            }
+            System.out.print("\n");
+        }*/
+
+        //SW Academy 2025
+
+        /*Scanner sc = new Scanner(System.in);
+        int T;
+        T = sc.nextInt();
+
+        int sum = 0;
+        for (int i = 0; i <= T; i++) {
+
+            sum = sum + i;
+
+        }
+        System.out.print(sum);*/
+
+        // SW Academy 1933
+
+        /*Scanner sc = new Scanner(System.in);
+
+        int N;
+
+
+        N = sc.nextInt();
+        ArrayList<Integer> list = new ArrayList<Integer>();
+
+        for(int i = 1; i <= N; i++){
+            if(N % i == 0){
+                list.add(i);
+            }
+        }*/
+
+        // SW Academy 1936
+
+        /*Scanner sc = new Scanner(System.in);
+
+        int A,B;
+        A = sc.nextInt();
+        B = sc.nextInt();
+        //1:가위 2:바위 3:보
+        if(A == 1){
+            if(B == 2){
+                System.out.printf("B");
+            }
+            else if(B == 3) {
+                System.out.printf("A");
+            }
+        }
+        else if(A == 2){
+            if(B == 1){
+                System.out.printf("A");
+            }
+            else if(B == 3) {
+                System.out.printf("B");
+            }
+        }
+        else if(A == 3) {
+            if (B == 1) {
+                System.out.printf("B");
+            } else if (B == 2) {
+                System.out.printf("A");
+            }
+
+        }*/
+
+        //SW Academy 2019
+
+        /*Scanner sc = new Scanner(System.in);
+        int T;
+        T = sc.nextInt();
+        int sum = 1;
+
+        for(int i = 0; i <= T; i++){
+            System.out.print(sum + " ");
+            sum = sum * 2;
+
+        }*/
+
+        //SW Academy 1545
+
+        /*Scanner sc = new Scanner(System.in);
+        int T,N;
+        T = sc.nextInt();
+
+
+        for(int i = 0; i <= T; i++){
+            N = T;
+            N = N - i;
+            System.out.print(N + " ");
+
+
+        }*/
+
+
+
+
+
+
+
+
+
 
 
 
