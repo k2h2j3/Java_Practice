@@ -125,6 +125,59 @@ public class AcademySolve {
 
     }*/
 
+        //SW Academy 2056
+
+        /*Scanner sc = new Scanner(System.in);
+        int T;
+        T=sc.nextInt();
+
+
+        for(int i = 1; i< T+1; i++){
+
+            String date = sc.next();
+
+            if(date.length() != 8) {
+                System.out.printf("#%d %d",i, -1);
+            }
+
+            String year_s = date.substring(0,4);
+            String month_s = date.substring(4,6);
+            String day_s = date.substring(6,8);
+
+            int month_i = Integer.parseInt(month_s);
+            int day_i = Integer.parseInt(day_s);
+
+            if (month_i > 12 || month_i < 1){
+                System.out.printf("#%d -1",i);
+                continue;
+            }
+
+            if (month_i == 2) {
+                if(day_i > 28 || day_i < 1){
+                    System.out.printf("#%d -1",i);
+                    continue;
+                }
+            }
+
+            if (month_i == 1 || month_i == 3 || month_i == 5 || month_i == 7 || month_i == 8 ||
+                    month_i == 10 || month_i == 12){
+                if(day_i > 31 || day_i < 1){
+                    System.out.printf("#%d -1",i);
+                    continue;
+                }
+            }
+            else {
+                if(day_i > 30 || day_i <1){
+                    System.out.printf("#%d -1",i);
+                    continue;
+                }
+
+            }
+            System.out.printf("\n#%d %s/%s/%s\n",i, year_s, month_s, day_s);
+
+
+        }*/
+
 
 
 
