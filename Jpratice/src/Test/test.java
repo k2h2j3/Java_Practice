@@ -10,18 +10,37 @@ public class test {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        int T,N;
-        T = sc.nextInt();
+        int N;
+        N = sc.nextInt();
+
+        for(int i = 1; i <= N; i++ ) {
+            int num = i;
+            int cnt = 0; // "-" 카운트
+            int clapnum;
+            while (num > 0) {
+                clapnum = num % 10;
+                if (clapnum == 3 || clapnum == 6 || clapnum == 9)
+                {
+                    cnt++;
+                }
+                num = num / 10;
+
+            }
+            if(cnt == 0) {
+                    System.out.print(i);
+
+            }
+            else{
+                while(cnt-- > 0){
+                    System.out.print("-");
+                }
 
 
-        for(int i = 0; i <= T; i++){
-            N = T;
-            N = N - i;
-            System.out.print(N + " ");
-
+            }
+            System.out.print(" ");
 
         }
-
+        sc.close();
     }
 
 }
