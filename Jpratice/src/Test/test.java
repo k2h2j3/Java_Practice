@@ -9,41 +9,52 @@ public class test {
 
 
         Scanner sc = new Scanner(System.in);
-        int T = sc.nextInt();
+        //int T = sc.nextInt();
 
-        for(int tc = 1; tc <= T; tc++) {
+        for(int tc = 1; tc <= 10; tc++) {
 
-            int P = sc.nextInt();
-            int Q = sc.nextInt();
-            int R = sc.nextInt();
-            int S = sc.nextInt();
-            int W = sc.nextInt();
+            //배열 => 배열의 인덱스값 = 가로길이, 배열의 인덱스 안의 값 = 건물의 높이
+            ArrayList<Integer> building = new ArrayList<Integer>();
+            int[] gaparr= new int[4];
 
-            //A회사 B회사에 지불할 수도금액
-            int costA = 0;
-            int costB = 0;
-            //가장 합리적인 수도금액
-            int bestcost = 0;
+            int N = sc.nextInt(); //가로 길이
+            int result = 0; //한 건물당 조망이 확보된 세대 수
+            int sum = 0;
 
-            //B사 수도 금액 계산
-            if(W > R){
-                costB = Q + (W-R)*S;
-            }
-            else{
-                costB = Q;
+
+            //건물높이 입력 받기
+           for(int i = 0; i < N; i++) {
+                int input = sc.nextInt();
+                building.add(input);
             }
 
-            //가장 합리적인 가격 도출
-            if(costB >= W * P){
-                costA = W * P;
-                bestcost =  costA;
-            }
-            else if(costB < W * P){
-                bestcost = costB;
-            }
-            System.out.println("#"+ tc + " " + bestcost);
+           //처음과 끝을 2개씩 공백을 만들고 비교.
+           for(int i = 2; i < building.size() -2; i++){
+
+               int gap1 = building.get(i) - building.get(i-2);
+               gaparr[0] = gap1;
+               int gap2 = building.get(i) - building.get(i-1);
+               gaparr[1] = gap2;
+               int gap3 = building.get(i) - building.get(i+1);
+               gaparr[2] = gap3;
+               int gap4 = building.get(i) - building.get(i+2);
+               gaparr[3] = gap4;
+
+               Arrays.sort(gaparr);
+               if(gaparr[0] <= 0){
+                   result = 0;
+               }
+               else{
+                   result = gaparr[0];
+               }
+               sum = sum + result;
+           }
+           System.out.println("#" + tc + " " + sum);
+
+
 
         }
+
 
 
 

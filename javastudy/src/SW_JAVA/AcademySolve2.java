@@ -1,5 +1,7 @@
 package SW_JAVA;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class AcademySolve2 {
@@ -283,7 +285,7 @@ public class AcademySolve2 {
                 }
             }*/
 
-            //SW Academy 1284
+            //SW Academy 1284 : 합리적인 수도 금액 구하기
 
             /*Scanner sc = new Scanner(System.in);
             int T = sc.nextInt();
@@ -321,6 +323,47 @@ public class AcademySolve2 {
                 System.out.println("#"+ tc + " " + bestcost);
 
             }*/
+
+            //SW Academy 1204: 최빈수 구하기
+
+            /*Scanner sc = new Scanner(System.in);
+            int T = sc.nextInt();
+
+            for(int tc = 1; tc <= T; tc++) {
+
+                //입력받은 점수 배열
+                int[] dataarr = new int[1000];
+                //카운팅 배열
+                int[] countarr = new int[101];
+
+                for(int i = 0; i < dataarr.length; i++) {
+
+                    int input = sc.nextInt();
+                    dataarr[i] = input;
+                }
+                //카운팅 배열 만드는 과정 1. array의 값을 index로 하는 counting 배열 값 1증가
+                for(int i = 0; i < dataarr.length; i++){
+                    countarr[dataarr[i]]++;
+                }
+
+                int Max = 0;
+                int avg = 0;
+
+                for(int i = 0; i < countarr.length; i++){
+                    if(Max <= countarr[i]){
+                        Max = countarr[i];
+                        avg = i;
+                    }
+                }
+                System.out.println("#" + tc + " " + avg);
+
+
+            }*/
+
+
+
+
+
 
 
 
