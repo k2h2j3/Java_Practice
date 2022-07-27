@@ -167,6 +167,124 @@ public class AcademySolve2 {
 
             }*/
 
+            //SW Academy 1976 : 시간 덧셈
+
+            /*Scanner sc = new Scanner(System.in);
+            int T;
+            T = sc.nextInt();
+
+            for(int i = 1; i <= T; i++) {
+
+                int Hinput1, Hinput2;
+                int Minput1, Minput2;
+                int Hsum,Msum = 0;
+
+                Hinput1 = sc.nextInt();
+                Minput1 = sc.nextInt();
+
+                Hinput2 = sc.nextInt();
+                Minput2 = sc.nextInt();
+
+                Hsum = Hinput1 + Hinput2;
+                Msum = Minput1 + Minput2;
+
+                if(Hsum > 12){
+                    Hsum = Hsum % 12;
+                }
+                if(Msum > 60){
+                    Msum = Msum - 60;
+                    Hsum++;
+                }
+                System.out.print("#"+ i + " " + Hsum + " " + Msum);
+
+            }*/
+
+            //SW Academy 1970 : 거스름돈 변환기
+
+            /*Scanner sc = new Scanner(System.in);
+            int T;
+            T = sc.nextInt();
+
+            for(int i = 1; i <= T; i++) {
+
+                int N;
+                N = sc.nextInt();
+
+                int cnt50000 = 0;
+                int cnt10000 = 0;
+                int cnt5000 = 0;
+                int cnt1000 = 0;
+                int cnt500 = 0;
+                int cnt100 = 0;
+                int cnt50 = 0;
+                int cnt10 = 0;
+
+                while(N >= 10){
+                    if(N >= 50000){
+                        cnt50000 = N / 50000;
+                        N = N % 50000;
+                    }
+                    if(N >= 10000){
+                        cnt10000 = N / 10000;
+                        N = N % 10000;
+                    }
+                    if(N >= 5000){
+                        cnt5000 = N / 5000;
+                        N = N % 5000;
+                    }
+                    if(N >= 1000){
+                        cnt1000 = N / 1000;
+                        N = N % 1000;
+                    }
+                    if(N >= 500){
+                        cnt500 = N / 500;
+                        N = N % 500;
+                    }
+                    if(N >= 100){
+                        cnt100 = N / 100;
+                        N = N % 100;
+                    }
+                    if(N >= 50){
+                        cnt50 = N / 50;
+                        N = N % 50;
+                    }
+                    if(N >= 10){
+                        cnt10 = N / 10;
+                        N = N % 10;
+                    }
+                }
+                System.out.println("#" + " " + i);
+                System.out.println(cnt50000 + " " +cnt10000 + " " +cnt5000 + " " +
+                        cnt1000 + " " + cnt500 + " " +cnt100 + " " +
+                        cnt50 + " "+ cnt10);*/
+
+
+            //SW Academy 1946 : 압축풀기
+
+           /* Scanner sc = new Scanner(System.in);
+            int T = sc.nextInt();
+
+            for(int tc = 1; tc <= T; tc++) {
+
+                int N = sc.nextInt();
+                System.out.println("#" + tc);
+
+                for(int i = 1; i <= N; i++){
+
+                    String inputStr = sc.next();
+                    int inputNum = sc.nextInt();
+                    System.out.println();
+
+                    for(int j = 0; j < inputNum; j++){
+
+                        System.out.print(inputStr);
+                    }
+
+                }
+            }*/
+
+
+
 
     }
 }
