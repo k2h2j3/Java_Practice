@@ -13,29 +13,67 @@ public class test {
 
         for(int tc = 1; tc <= 10; tc++) {
 
-            //입력 값: 덤프 수, 각 상자의 높이
-            int dump = sc.nextInt();
-            int[] boxarr = new int[100];
-            //가장 높은 위치와 가장 낮은 위치의 차이 값
-            int result;
+            int[][] arr = new int[100][100];
+            int[] row = new int[100];
+            int[] column = new int[100];
+            int[] comp = new int[4];
 
-            for(int i = 0; i < boxarr.length; i++){
+            int sumL = 0;
+            int sumR = 0;
+            int N = sc.nextInt();
 
-                int boxH = sc.nextInt();
-                boxarr[i] = boxH;
+
+                //입력 받은 값 2차원 배열에 넣기
+                for (int i = 0; i < arr.length; i++) {
+                    for (int j = 0; j < arr[i].length; j++) {
+                        int input = sc.nextInt();
+                        arr[i][j] = input;
+                    }
+                }
+
+                //행 계산 값 넣기
+                for (int i = 0; i < 100; i++) {
+                    int sum = 0;
+                    for (int j = 0; j < 100; j++) {
+                        sum = sum + arr[i][j];
+                    }
+                    row[i] = sum;
+                }
+                Arrays.sort(row);
+                //행중 가장 큰 값 comp배열에 추가
+                comp[0] = row[99];
+
+                //열 계산값 넣기
+                for (int i = 0; i < 100; i++) {
+                    int sum = 0;
+                    for (int j = 0; j < 100; j++) {
+                        sum = sum + arr[j][i];
+                    }
+                    column[i] = sum;
+                }
+                Arrays.sort(column);
+                //열중 가장 큰 값 comp배열에 추가
+                comp[1] = column[99];
+
+                //왼쪽 대각선 합 계산
+                for (int i = 0; i < 100; i++) {
+                    sumL = sumL + arr[i][i];
+                }
+                comp[2] = sumL;
+
+                //오른쪽 대각선 합계산
+                for (int i = 0; i < 100; i++) {
+                    sumR = sumR + arr[i][99 - i];
+                }
+                comp[3] = sumR;
+
+                //comp배열에서 오름차순으로 정렬
+                Arrays.sort(comp);
+
+                //가장 큰 값 출력
+                System.out.println("#" + tc + " " + comp[3]);
             }
-            //오름차순으로 정렬
-            Arrays.sort(boxarr);
 
-            for(int i = 0; i < dump; i++){
-                boxarr[0] = boxarr[0] + 1; //가장 낮은 높이의 상자에 상자 1개를 쌓고
-                boxarr[99] = boxarr[99] -1; //가장 높은 높이의 상자에 상자 1개를 뺀다.
-                Arrays.sort(boxarr);
-            }
-            result = boxarr[99] - boxarr[0];
-            System.out.println("#" + tc + " " + result);
-
-        }
 
 
 
