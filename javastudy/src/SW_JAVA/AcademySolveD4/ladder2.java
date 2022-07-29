@@ -1,10 +1,10 @@
-package Test;
+package SW_JAVA.AcademySolveD4;
 
+import java.util.Scanner;
 import java.util.*;
 
-public class test
-{
-
+//SW Academy 1211 : 사다리 타기 2(최단경로 구하기)
+public class ladder2 {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
@@ -71,4 +71,3 @@ public class test
     }
 
 }
-
