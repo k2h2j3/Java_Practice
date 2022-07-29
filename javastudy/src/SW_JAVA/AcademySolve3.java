@@ -166,5 +166,8 @@ public class AcademySolve3 {
 
 
 
+
+
     }
+
 }

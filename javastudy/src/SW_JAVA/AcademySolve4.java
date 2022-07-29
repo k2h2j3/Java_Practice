@@ -1,16 +1,11 @@
-package Test;
+package SW_JAVA;
 
-import java.util.*;
-
-public class test
-{
-    public static int[][] ladder = new int[100][100];
-    public static boolean find = false;
-
-
+public class AcademySolve4 {
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
+        //SW Academy 1210 : 사다리 타기 1
+
+        /*Scanner sc = new Scanner(System.in);
 
 
         for (int tc = 1; tc <= 10; tc++) {
@@ -30,25 +25,32 @@ public class test
             for (int i = 0; i < 100; i++){
                 //스타팅 지점 찾기
                 if (ladder[0][i] == 1) {
-                        //사다리 타기
-                        findX(0, i);
-                        //2 발견하면 i지점 반환
-                        if (find) {
-                            result = i;
-                            break;
-                        }
+                    //사다리 타기
+                    findX(0, i);
+                    //2 발견하면 i지점 반환
+                    if (find) {
+                        result = i;
+                        break;
+                    }
                 }
             }
             System.out.println("#"+ tc + " " + result);
 
 
 
-        }
+        }*/
+
+
+
+
+
+
+
 
 
     }
-
-    public static void findX(int col, int row) {
+        //사다리 타기 1 메서드
+    /*public static void findX(int col, int row) {
         boolean route[][] = new boolean[100][100];
         while(col < 100){
             route[col][row] = true;
@@ -66,6 +68,7 @@ public class test
                 col++;
             }
         }
-    }
-}
+    }*/
 
+
+}
