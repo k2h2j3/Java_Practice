@@ -18,6 +18,7 @@ public class Palindrome1 {
         for(int tc = 1; tc <= 10; tc++) {
             //회문 길이 입력
             int palindrome = sc.nextInt();
+            //새로운 퍼즐 테이블마다 결과값 초기화
             result = 0;
 
 
@@ -47,11 +48,11 @@ public class Palindrome1 {
     }
 
     public static void findP(int row,int col,int p,String type){
-
+        //문자열 생성칸
         String tmp = "";
         int count = 0;
 
-        //가로탐색
+        //가로탐색: 좌표를 이동시킬때마다 tmp(문자열생성칸)에 문자를 입력후 count 1증가
         if(type.equals("col")){
             while(count < p){
                 tmp += puzzle[row][col+count];
@@ -60,7 +61,7 @@ public class Palindrome1 {
 
         }
 
-        //세로탐색
+        //세로탐색: 이하 똑같이 실행
         else if(type.equals("row")){
             while(count < p){
                 tmp += puzzle[col+count][row];
