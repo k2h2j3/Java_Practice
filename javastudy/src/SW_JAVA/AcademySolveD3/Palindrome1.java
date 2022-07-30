@@ -1,9 +1,10 @@
-package Test;
+//SW Academy 1215 : 회문1
 
-import java.util.*;
+package SW_JAVA.AcademySolveD3;
 
-public class test
-{
+import java.util.Scanner;
+
+public class Palindrome1 {
     //문자 테이블 생성
     public static char[][] puzzle = new char[8][8];
 
@@ -41,7 +42,7 @@ public class test
             }
 
 
-        System.out.println("#" + tc + " " + result);
+            System.out.println("#" + tc + " " + result);
         }
     }
 
@@ -77,7 +78,4 @@ public class test
         }
 
     }
-
-
 }
-
