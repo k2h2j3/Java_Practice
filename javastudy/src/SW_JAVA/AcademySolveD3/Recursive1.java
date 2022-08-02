@@ -1,9 +1,9 @@
-package Test;
+package SW_JAVA.AcademySolveD3;
 
-import java.util.*;
+import java.util.Scanner;
 
-public class test
-{
+public class Recursive1 {
+
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
@@ -26,7 +26,4 @@ public class test
             return N * MathX(N,M-1);
         }
     }
-
-
 }
-
