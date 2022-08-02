@@ -1,3 +1,5 @@
+//SW Academy 1216 회문2
+
 package SW_JAVA.AcademySolveD3;
 
 import java.util.Scanner;

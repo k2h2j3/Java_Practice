@@ -1,33 +1,33 @@
-package Test;
+//SW Academy 1218 괄호 검사
 
-import java.util.*;
+package SW_JAVA.AcademySolveD4;
 
-public class test
-{
+import java.util.Scanner;
+import java.util.Stack;
 
-    public static void main(String[] args) {
+public class Stack1 {public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
+    Scanner sc = new Scanner(System.in);
 
-        for (int tc = 1; tc <= 10; tc++) {
+    for (int tc = 1; tc <= 10; tc++) {
 
-            //괄호검사할 문자길이 입력
-            int length = sc.nextInt();
-            //문자열로 입력받기
-            String input = sc.next();
-            boolean result = stackexam(input);
+        //괄호검사할 문자길이 입력
+        int length = sc.nextInt();
+        //문자열로 입력받기
+        String input = sc.next();
+        boolean result = stackexam(input);
 
-            if(result == true){
-                System.out.println("#"+ tc + " " + 1);
-            }
-            else{
-                System.out.println("#" + tc + " " + 0);
-            }
-
-
+        if(result == true){
+            System.out.println("#"+ tc + " " + 1);
+        }
+        else{
+            System.out.println("#" + tc + " " + 0);
         }
 
+
     }
+
+}
     //스택함수 구현
     public static boolean stackexam(String input){
         Stack<Character> stack = new Stack<Character>();
@@ -42,7 +42,7 @@ public class test
                 stack.pop();
             }
             else if(c == '}' && stack.peek() == '{'){
-                    stack.pop();
+                stack.pop();
             }
             else if(c == ']' && stack.peek() == '['){
                 stack.pop();
@@ -64,6 +64,4 @@ public class test
 
 
 
-
 }
-

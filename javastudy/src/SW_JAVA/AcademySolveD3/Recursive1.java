@@ -1,3 +1,4 @@
+//SW Academy 1217 거듭제곱
 package SW_JAVA.AcademySolveD3;
 
 import java.util.Scanner;
