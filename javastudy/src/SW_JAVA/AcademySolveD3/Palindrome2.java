@@ -1,9 +1,8 @@
-package Test;
+package SW_JAVA.AcademySolveD3;
 
-import java.util.*;
+import java.util.Scanner;
 
-public class test
-{
+public class Palindrome2 {
     //문자 테이블 생성
     public static char[][] puzzle = new char[100][100];
 
@@ -66,5 +65,5 @@ public class test
         return true;
 
     }
-}
 
+}
