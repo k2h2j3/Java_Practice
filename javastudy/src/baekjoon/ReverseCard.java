@@ -1,5 +1,6 @@
+package baekjoon;
 import java.util.*;
-public class Main {
+public class ReverseCard {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int[] card = new int[20];
@@ -31,8 +32,3 @@ public class Main {
         }
     }
 }
-
-
-
-
-
