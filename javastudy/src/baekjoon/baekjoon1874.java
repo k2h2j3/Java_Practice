@@ -1,7 +1,9 @@
+package baekjoon;
+
 import java.io.*;
 import java.util.*;
 
-public class Main {
+public class baekjoon1874 {
     public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
         StringBuilder sb = new StringBuilder();
@@ -35,8 +37,3 @@ public class Main {
 
     }
 }
-
-
-
-
-
