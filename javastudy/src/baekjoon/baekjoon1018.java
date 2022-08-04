@@ -1,7 +1,9 @@
+package baekjoon;
+
 import java.io.*;
 import java.util.*;
 
-public class Main {
+public class baekjoon1018 {
     public static boolean[][] arr;
     public static int result = 64;
     public static void main(String[] args) throws IOException {
@@ -58,8 +60,3 @@ public class Main {
 
     }
 }
-
-
-
-
-
