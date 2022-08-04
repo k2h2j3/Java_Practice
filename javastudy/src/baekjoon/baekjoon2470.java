@@ -1,7 +1,9 @@
+package baekjoon;
+//백준 투포인터문제 2
 import java.io.*;
 import java.util.*;
 
-public class Main {
+public class baekjoon2470 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
@@ -48,8 +50,3 @@ public class Main {
         return Integer.parseInt(s);
     }
 }
-
-
-
-
-
