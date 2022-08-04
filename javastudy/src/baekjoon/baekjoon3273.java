@@ -1,5 +1,7 @@
+package baekjoon;
 import java.util.*;
-public class Main {
+public class baekjoon3273 {
+    //투포인터 방법
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -33,8 +35,3 @@ public class Main {
 
     }
 }
-
-
-
-
-
