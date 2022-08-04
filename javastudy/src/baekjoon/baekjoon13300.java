@@ -1,5 +1,6 @@
+package baekjoon;
 import java.util.*;
-public class Main {
+public class baekjoon13300 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         //수학여행가는 학생수
@@ -74,8 +75,3 @@ public class Main {
         System.out.print(cnt);
     }
 }
-
-
-
-
-
