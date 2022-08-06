@@ -2,61 +2,37 @@ import java.io.*;
 import java.util.*;
 
 public class Main {
-    public static boolean[][] arr;
-    public static int result = 64;
     public static void main(String[] args) throws IOException {
+
         Scanner sc = new Scanner(System.in);
-        int row = sc.nextInt();
-        int col = sc.nextInt();
 
-        arr = new boolean[row][col];
+        String input1 = sc.next();
+        String input2 = sc.next();
+        int[] arr1 = new int[input1.length()+1];
+        int[] arr2 = new int[input2.length()+1];
+        int[] arr3 = new int[arr1.length+1];
 
-        for (int i = 0; i < row; i++) {
-            String X_Line = sc.next();
-            for (int j = 0; j < col; j++) {
-                if (X_Line.charAt(j) == 'W') {
-                    arr[i][j] = true;
-                } else {
-                    arr[i][j] = false;
-                }
+        for(int i = 0; i< arr1.length; i++){
+            arr1[i] = input1.charAt(i) - '0';
+        }
+        for(int i = 0; i< arr1.length; i++){
+            arr2[i] = input2.charAt(i) - '0';
+        }
+        for(int i = 0; i < arr1.length;i++){
+            arr3[i] = arr2[i] + arr1[i];
+        }
+        for(int i = 1; i < arr3.length;i++){
+            if(arr3[i]>=10){
+                arr3[i] = (arr3[i] % 10);
+                arr3[i-1] += 1;
             }
         }
-
-        int new_row = row - 7;
-        int new_col = col - 7;
-
-        for (int i = 0; i < new_row; i++) {
-            for (int j = 0; j < new_col; j++) {
-                find(i, j);
-            }
+        for(int i = 0; i < arr3.length; i++){
+            System.out.print(arr3[i]);
         }
-        System.out.println(result);
     }
 
-    public static void find(int row, int col){
-        int end_row = row + 8;
-        int end_col = col + 8;
-        int cnt  = 0;
 
-        boolean check_1st = arr[row][col];
-
-        for(int i = row; i < end_row; i++){
-            for(int j = col; j < end_col; j++){
-                if(check_1st != arr[i][j]){
-                    cnt++;
-                }
-
-                check_1st = (!check_1st);
-            }
-
-            check_1st = !check_1st;
-        }
-
-        cnt = Math.min(cnt, 64 - cnt);
-        result = Math.min(result, cnt);
-
-
-    }
 }
 
 
