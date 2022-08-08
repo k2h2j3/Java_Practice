@@ -2,64 +2,28 @@ import java.io.*;
 import java.util.*;
 
 public class Main {
-    public static void main(String[] args) {
 
-        Scanner in = new Scanner(System.in);
-
-        int N = in.nextInt();
-        int[] arr = new int[N];
-
-
-        for(int i = 0; i < N; i++) {
-            arr[i] = in.nextInt();
-        }
-
-
-        Arrays.sort(arr);
-
-        int M = in.nextInt();
-
-
-        StringBuilder sb = new StringBuilder();
-        for(int i = 0; i < M; i++) {
-
-            if(binarySearch(arr, in.nextInt()) >= 0) {
-                sb.append(1).append('\n');
-            }
-            else {
-                sb.append(0).append('\n');
-            }
-        }
-        System.out.println(sb);
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
+        System.out.println("어느 한 컴퓨터공학과 학생이 유명한 교수님을 찾아가 물었다.");
+        recursive(N, "");
     }
 
-    public static int binarySearch(int[] arr, int key) {
-
-        int lo = 0;
-        int hi = arr.length - 1;
-
-
-        while(lo <= hi) {
-
-            int mid = (lo + hi) / 2;
-
-            if(key < arr[mid]) {
-                hi = mid - 1;
-            }
-            else if(key > arr[mid]) {
-                lo = mid + 1;
-            }
-            else {
-                return mid;
-            }
+    public static void recursive(int num, String under_bar) {
+        System.out.println(under_bar + "\"재귀함수가 뭔가요?\"");
+        if(num == 0) {
+            System.out.println(under_bar + "\"재귀함수는 자기 자신을 호출하는 함수라네\"");
+        }else {
+            System.out.println(under_bar + "\"잘 들어보게. 옛날옛날 한 산 꼭대기에 이세상 모든 지식을 통달한 선인이 있었어.");
+            System.out.println(under_bar + "마을 사람들은 모두 그 선인에게 수많은 질문을 했고, 모두 지혜롭게 대답해 주었지.");
+            System.out.println(under_bar + "그의 답은 대부분 옳았다고 하네. 그런데 어느 날, 그 선인에게 한 선비가 찾아와서 물었어.\"");
+            recursive(--num, under_bar + "____");
         }
-
-        return -1;
+        System.out.println(under_bar + "라고 답변하였지.");
     }
-
-
-
 }
+
 
 
 
