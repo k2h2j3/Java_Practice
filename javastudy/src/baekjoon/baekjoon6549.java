@@ -1,6 +1,9 @@
+//monotonic stack 구현 함수 2
+package baekjoon;
+
 import java.util.*;
 
-public class Main {
+public class baekjoon6549 {
 
     public static void main(String[] args) {
 
@@ -42,15 +45,3 @@ public class Main {
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
