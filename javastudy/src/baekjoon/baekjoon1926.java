@@ -1,7 +1,9 @@
+package baekjoon;
+
 import java.io.IOException;
 import java.util.*;
 
-public class Main {
+public class baekjoon1926 {
 
     static class Point {
         Point(int r, int c) {
@@ -87,15 +89,3 @@ public class Main {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
