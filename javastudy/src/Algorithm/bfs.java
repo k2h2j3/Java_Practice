@@ -1,7 +1,9 @@
+package Algorithm;
+
 import java.io.IOException;
 import java.util.*;
 
-public class Main {
+public class bfs {
     static final int Max_N = 10;
     static int[] mr = {-1,0,1,0};
     static int[] mc = {0,-1,0,1};
@@ -44,7 +46,8 @@ public class Main {
         Queue<Point> que = new ArrayDeque<>();
 
         check[S_row][S_col] = true;
-        que.add(new Point(S_row,S_col,0));
+        Point start = new Point(S_row, S_col, 0);
+        que.add(start);
 
         while(!que.isEmpty()){
             Point now = que.remove();
@@ -65,21 +68,10 @@ public class Main {
                     continue;
                 }
                 check[nr][nc] = true;
-                que.add(new Point(nr,nc,now.dist+1));
+                Point next = new Point(nr, nc, now.dist + 1);
+                que.add(next);
             }
         }
         return -1;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
