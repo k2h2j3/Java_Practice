@@ -1,12 +1,13 @@
 package Algorithm.BFS;
 
-//불!
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 
-public class baekjoon4179 {
+public class baekjoon5427 {
+    static Queue<Point> q = new ArrayDeque<>();
+    static Queue<Point> q2 = new ArrayDeque<>();
 
     static int[] moveR = {-1,0,1,0};
     static int[] moveC = {0,-1,0,1};
@@ -29,46 +30,51 @@ public class baekjoon4179 {
 
     public static void main(String[] args) throws IOException {
 
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
+        Scanner sc = new Scanner(System.in);
 
-        //행
-        R = Integer.parseInt(st.nextToken());
-        //열
-        C = Integer.parseInt(st.nextToken());
+        int N = sc.nextInt();
+        StringBuilder sb = new StringBuilder();
 
-        box = new Character[R][C];
+        while(N-- > 0){
+            q.clear();
+            q2.clear();
+            //행
+            C = sc.nextInt();
+            //열
+            R = sc.nextInt();
 
-        int F_row = 0;
-        int F_col = 0;
+            box = new Character[R][C];
 
-        int J_row = 0;
-        int J_col = 0;
+            int F_row = 0;
+            int F_col = 0;
 
-        for (int i = 0; i < R; i++) {
-            String line = br.readLine();
-            for (int j = 0; j < C; j++) {
-                if(line.charAt(j) == 'F'){
-                    F_row = i;
-                    F_col = j;
+            int J_row = 0;
+            int J_col = 0;
+
+            for (int i = 0; i < R; i++) {
+                String line = sc.next();
+                for (int j = 0; j < C; j++) {
+                    if (line.charAt(j) == '*') {
+                        F_row = i;
+                        F_col = j;
+                    } else if (line.charAt(j) == '@') {
+                        J_row = i;
+                        J_col = j;
+                    }
+                    box[i][j] = line.charAt(j);
                 }
-                else if(line.charAt(j) == 'J'){
-                    J_row = i;
-                    J_col = j;
-                }
-                box[i][j] = line.charAt(j);
+            }
+
+            Bfs_F(F_row, F_col);
+            int result = Bfs_J(J_row, J_col);
+
+            if (result == -1) {
+                sb.append("IMPOSSIBLE").append("\n");
+            } else {
+                sb.append(result).append("\n");
             }
         }
-
-        Bfs_F(F_row, F_col);
-        int result = Bfs_J(J_row, J_col);
-
-        if(result == -1){
-            System.out.println("IMPOSSIBLE");
-        }
-        else{
-            System.out.println(result);
-        }
+        System.out.println(sb);
 
         /*for(int i = 0; i < R; i++){
             for(int j = 0; j<C; j++){
@@ -92,17 +98,16 @@ public class baekjoon4179 {
 
         timeAttack = new int[R][C];
         for(int i = 0; i < R; i++){
-            for(int j = 0; j<C; j++){
+            for(int j = 0; j < C; j++){
                 timeAttack[i][j] = 2000;
             }
         }
 
         check = new boolean[R][C];
-        Queue<Point> q = new ArrayDeque<>();
 
         for(int i = 0; i < R; i++){
-            for(int j = 0; j<C; j++){
-                if(box[i][j] == 'F'){
+            for(int j = 0; j < C; j++){
+                if(box[i][j] == '*'){
                     check[S_row][S_col] = true;
                     q.add(new Point(i,j,1));
                 }
@@ -139,7 +144,6 @@ public class baekjoon4179 {
 
         timeAttack_J = new int[R][C];
         check2 = new boolean[R][C];
-        Queue<Point> q2 = new ArrayDeque<>();
 
         check2[S_row][S_col] = true;
         q2.add(new Point(S_row,S_col,1));

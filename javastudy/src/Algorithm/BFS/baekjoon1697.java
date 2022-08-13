@@ -1,7 +1,9 @@
+package Algorithm.BFS;
+
 import java.io.IOException;
 import java.util.*;
 
-public class Main{
+public class baekjoon1697{
     public static class Point{
         Point(int m,int t){
             me = m;
@@ -53,17 +55,3 @@ public class Main{
         return -1;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
