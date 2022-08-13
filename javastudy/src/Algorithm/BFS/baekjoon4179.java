@@ -1,9 +1,11 @@
+package Algorithm.BFS;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 
-public class Main {
+public class baekjoon4179 {
 
     static int[] moveR = {-1,0,1,0};
     static int[] moveC = {0,-1,0,1};
@@ -172,15 +174,3 @@ public class Main {
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
