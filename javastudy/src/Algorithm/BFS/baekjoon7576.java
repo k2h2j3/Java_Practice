@@ -1,7 +1,10 @@
+package Algorithm.BFS;
+
+//토마토
 import java.io.IOException;
 import java.util.*;
 
-public class Main {
+public class baekjoon7576 {
 
     static int[] moveR = {-1,0,1,0};
     static int[] moveC = {0,-1,0,1};
@@ -96,15 +99,3 @@ public class Main {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
