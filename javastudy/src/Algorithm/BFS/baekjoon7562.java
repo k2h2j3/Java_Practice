@@ -6,8 +6,7 @@ import java.util.Queue;
 import java.util.Scanner;
 
 public class baekjoon7562 {
-    //{상,하,좌,우}
-    //왼쪽 위 이동
+    //나이트의 이동
     static int[] mr = {2,1,-1,-2,-2,-1,1,2};
     static int[] mc = {1,2,2,1,-1,-2,-2,-1};
 
