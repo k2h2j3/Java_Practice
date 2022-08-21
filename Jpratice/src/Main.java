@@ -1,71 +1,70 @@
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.*;
 
 public class Main {
 
-    static StringBuilder sb = new StringBuilder();
-    static StringBuilder sb2 = new StringBuilder();
-    static int N,M;
     static int[][] map;
-    static boolean[] check;
+    static StringBuilder sb = new StringBuilder();
 
     public static void main(String[] args) throws IOException {
 
-        Scanner sc = new Scanner(System.in);
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        N = sc.nextInt();
-        M = sc.nextInt();
-        int V =sc.nextInt();
+        int N = Integer.parseInt(br.readLine());
 
-        map = new int[N+1][N+1];
+        map = new int[N][N];
 
-        for(int i = 0; i < M; i++){
-            int S_node = sc.nextInt();
-            int E_node = sc.nextInt();
-
-            map[S_node][E_node] = map[E_node][S_node] = 1;
+        for(int i = 0; i < N; i++){
+            String line = br.readLine();
+            for(int j = 0; j < N; j++){
+                map[i][j] = Character.getNumericValue(line.charAt(j));
+            }
         }
-        check = new boolean[N+1];
-        dfs(V);
-        bfs(V);
 
-        System.out.println(sb2);
+        recursion(0,0,N);
         System.out.println(sb);
+
+
     }
 
-    public static void bfs(int v){
+    public static void recursion(int r, int c, int n){
 
-        check = new boolean[N+1];
-        Queue<Integer> q = new ArrayDeque<>();
+        if(check(r,c,n)){
+            if(map[r][c] == 0){
+                sb.append(0);
+            }
+            else{
+                sb.append(1);
+            }
+            return;
+        }
 
-        sb.append(v).append(" ");
-        check[v] = true;
-        q.add(v);
+        int half = n/2;
 
-        while(!q.isEmpty()){
-            int temp = q.remove();
+        sb.append('(');
+        //12
+        //34
+        recursion(r,c,half);
+        recursion(r,c+half,half);
+        recursion(r+half,c,half);
+        recursion(r+half,c+half,half);
+        sb.append(')');
+    }
 
-            for(int i = 0 ;i < N+1; i++){
-                if(map[temp][i] == 1 && !check[i]){
-                    check[i] = true;
-                    q.add(i);
-                    sb.append(i).append(" ");
+    public static boolean check(int r, int c, int n){
+
+        int sample = map[r][c];
+
+        for(int i = r; i < r + n; i++){
+            for(int j = c; j < c + n; j++){
+                if(map[i][j] != sample){
+                    return false;
                 }
             }
-
         }
-    }
-
-    public static void dfs(int v){
-
-        sb2.append(v).append(" ");
-        check[v] = true;
-
-        for(int i = 1; i < N+1; i++) {
-            if (map[v][i] == 1 && !check[i]) {
-                dfs(i);
-            }
-        }
+        return true;
     }
 }
 
