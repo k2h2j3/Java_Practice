@@ -5,69 +5,72 @@ import java.util.*;
 
 public class Main {
 
-    static int[][] map;
-    static StringBuilder sb = new StringBuilder();
+    static int L,C;
+    static StringBuilder sb;
+    static char[] result;
+    static char[] str;
+
+    static StringTokenizer st;
 
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        st = new StringTokenizer(br.readLine());
 
-        int N = Integer.parseInt(br.readLine());
+        L = Integer.parseInt(st.nextToken());
+        C = Integer.parseInt(st.nextToken());
 
-        map = new int[N][N];
+        result = new char[L];
+        str = new char[C];
 
-        for(int i = 0; i < N; i++){
-            String line = br.readLine();
-            for(int j = 0; j < N; j++){
-                map[i][j] = Character.getNumericValue(line.charAt(j));
-            }
+
+        st = new StringTokenizer(br.readLine(), " ");
+
+        for(int i = 0; i < C; i++){
+            str[i] = st.nextToken().charAt(0);
         }
 
-        recursion(0,0,N);
-        System.out.println(sb);
-
+        Arrays.sort(str);
+        backtrack(0,0);
 
     }
+    public static void backtrack(int n,int s) {
 
-    public static void recursion(int r, int c, int n){
-
-        if(check(r,c,n)){
-            if(map[r][c] == 0){
-                sb.append(0);
-            }
-            else{
-                sb.append(1);
+        if(n == L){
+            if(check()){
+                System.out.println(result);
             }
             return;
         }
 
-        int half = n/2;
+        for(int i = s; i < str.length; i++){
 
-        sb.append('(');
-        //12
-        //34
-        recursion(r,c,half);
-        recursion(r,c+half,half);
-        recursion(r+half,c,half);
-        recursion(r+half,c+half,half);
-        sb.append(')');
+            result[n] = str[i];
+            backtrack(n+1,i+1);
+        }
     }
+    public static boolean check(){
 
-    public static boolean check(int r, int c, int n){
+        int vo = 0;
+        int con = 0;
 
-        int sample = map[r][c];
-
-        for(int i = r; i < r + n; i++){
-            for(int j = c; j < c + n; j++){
-                if(map[i][j] != sample){
-                    return false;
-                }
+        for(char i : result){
+            if(i == 'a' || i == 'e' || i == 'i' || i == 'o' || i == 'u'){
+                vo++;
+            }
+            else{
+                con++;
             }
         }
-        return true;
+
+        if(vo >= 1 && con >= 2){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 }
-
 
 
 
