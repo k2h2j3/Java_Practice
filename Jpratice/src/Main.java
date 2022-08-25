@@ -5,71 +5,57 @@ import java.util.*;
 
 public class Main {
 
-    static int L,C;
-    static StringBuilder sb;
-    static char[] result;
-    static char[] str;
+    static int[] mr = {-1,0,1,0};
+    static int[] mc = {0,-1,0,1};
 
-    static StringTokenizer st;
+    static int[] Point_C = new int[9];
+    static int[] Point_R = new int[9];
+
+    static char[][] map;
+    static int result = 0;
 
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        st = new StringTokenizer(br.readLine());
 
-        L = Integer.parseInt(st.nextToken());
-        C = Integer.parseInt(st.nextToken());
+        map = new char[3][3];
 
-        result = new char[L];
-        str = new char[C];
-
-
-        st = new StringTokenizer(br.readLine(), " ");
-
-        for(int i = 0; i < C; i++){
-            str[i] = st.nextToken().charAt(0);
+        for(int i = 0; i < 3; i++){
+            String line = br.readLine();
+            for(int j = 0; j < 3; j++){
+                map[i][j] = line.charAt(j);
+            }
         }
 
-        Arrays.sort(str);
-        backtrack(0,0);
+        for(int i = 0; i < 9; i++){
+            Point_C[i] = i % 3;
+            Point_R[i] = i / 3;
+        }
+
+        crew(new int[5], 0, 0);
+        System.out.println(result);
 
     }
-    public static void backtrack(int n,int s) {
 
-        if(n == L){
-            if(check()){
-                System.out.println(result);
+    public static void crew(int[] crew, int n,int member){
+
+        if(n == 5){
+            for(int i = 0; i < crew.length;i++){
+                System.out.print(crew[i] + " ");
             }
+            System.out.println();
             return;
         }
 
-        for(int i = s; i < str.length; i++){
-
-            result[n] = str[i];
-            backtrack(n+1,i+1);
+        if(member == 9){
+            return;
         }
+
+        crew[n] = member;
+        crew(crew, n+1 ,member+1);
+        crew(crew, n,member+1);
     }
-    public static boolean check(){
 
-        int vo = 0;
-        int con = 0;
-
-        for(char i : result){
-            if(i == 'a' || i == 'e' || i == 'i' || i == 'o' || i == 'u'){
-                vo++;
-            }
-            else{
-                con++;
-            }
-        }
-
-        if(vo >= 1 && con >= 2){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
 }
 
 
